@@ -1,0 +1,58 @@
+@import '../../public/styles/styles.scss';
+
+.navbar {
+	background: #222;
+	color: #fff;
+	padding: 10px 0;
+	width: fit-content;
+	border-radius: 4px;
+	overflow: hidden;
+	margin-right: 8px;
+	z-index: 4;
+
+	.navbarItem {
+		position: relative;
+		width: 72px;
+		height: 68px;
+		cursor: pointer;
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		justify-content: center;
+
+		&:hover,
+		&.active {
+			color: $primary-color;
+			transition: all 0.5s;
+			.navbarIcon {
+				transition: all 0.5s;
+				color: $primary-color;
+			}
+		}
+
+		&:not(:last-child)::before {
+			content: '';
+			position: absolute;
+			left: 0;
+			bottom: 0;
+			width: 100%;
+			height: 1px;
+			background: radial-gradient(
+				ellipse at right,
+				rgba(197, 202, 213, 0.15) 0%,
+				rgba(255, 255, 255, 0) 70%
+			);
+		}
+
+		.navbarIcon {
+			font-size: 20px;
+		}
+
+		.navbarName {
+			font-size: 12px;
+			line-height: 20px;
+			margin-top: 4px;
+			text-transform: uppercase;
+		}
+	}
+}

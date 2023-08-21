@@ -1,0 +1,14 @@
+@font-face {
+	font-family: 'lekton';
+	src: url('../fonts/Lekton-Regular.ttf') format('truetype'),
+		url('../fonts/Lekton-Bold.ttf') format('truetype'),
+		url('../fonts/Lekton-Italic.ttf') format('truetype');
+}
+
+* {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font-family: lekton;
+}

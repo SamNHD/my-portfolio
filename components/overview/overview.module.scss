@@ -1,0 +1,58 @@
+@import '../../public/styles/styles.scss';
+
+.overview {
+	width: 480px;
+	background: $background-color;
+	border-radius: 4px;
+	position: relative;
+	z-index: 3;
+	box-shadow: 10px 10px 15px rgba(0, 0, 0, 0.1);
+
+	&::after {
+		content: '';
+		position: absolute;
+		opacity: 0.3;
+		top: -16px;
+		left: -16px;
+		width: 100%;
+		height: 100%;
+		border-radius: 4px;
+		z-index: -1;
+		background: linear-gradient(135deg, rgba(246, 184, 70, 0.4) 0%, rgba(246, 184, 70, 0.01) 100%);
+	}
+	.overviewAvatarWrapper {
+		position: relative;
+		.overviewAvatar {
+			position: absolute;
+			bottom: 0;
+			left: 50%;
+			transform: translate(-50%, 35px);
+			border-radius: 50%;
+			border: 2px solid #000;
+			object-fit: contain;
+			object-position: center;
+			width: 140px;
+			height: 140px;
+			overflow: hidden;
+			background: linear-gradient(
+				135deg,
+				rgba(246, 184, 70, 0.4) 0%,
+				rgba(246, 184, 70, 0.01) 100%
+			);
+		}
+	}
+	.overviewData {
+		text-align: center;
+		background: $background-color;
+		padding: 50px;
+		.overviewDataName {
+			font-size: 34px;
+			line-height: 32px;
+			font-weight: bold;
+			margin-bottom: 10px;
+		}
+		.overviewDataTitle {
+			color: $primary-color;
+		}
+	}
+}
