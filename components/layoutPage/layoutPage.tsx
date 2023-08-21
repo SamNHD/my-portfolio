@@ -14,7 +14,7 @@ const Layout = () => {
 	return (
 		<div className={style.layout}>
 			<Navbar id={id} onChange={onChangeId} />
-			<Overview />
+			<Overview onGoContact={() => onChangeId(4)} />
 			<div>content</div>
 		</div>
 	)

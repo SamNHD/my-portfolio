@@ -5,7 +5,7 @@ import { SLIDE_LIST } from '@/public/constants'
 import classNames from 'classnames'
 import Image from 'next/image'
 
-const Slide = (props) => {
+const Slide = () => {
 	const [id, setId] = useState(0)
 
 	useEffect(() => {

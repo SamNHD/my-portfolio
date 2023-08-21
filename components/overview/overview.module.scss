@@ -28,7 +28,7 @@
 			left: 50%;
 			transform: translate(-50%, 35px);
 			border-radius: 50%;
-			border: 2px solid #000;
+			border: 3px solid #222;
 			object-fit: contain;
 			object-position: center;
 			width: 140px;
@@ -44,7 +44,7 @@
 	.overviewData {
 		text-align: center;
 		background: $background-color;
-		padding: 50px;
+		padding: 50px 0 80px 0;
 		.overviewDataName {
 			font-size: 34px;
 			line-height: 32px;
@@ -53,6 +53,88 @@
 		}
 		.overviewDataTitle {
 			color: $primary-color;
+			overflow: hidden;
+			position: relative;
+			margin: 0 auto;
+			white-space: nowrap;
+			min-height: 27px;
 		}
+		.overviewDataContact {
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			gap: 16px;
+			margin-top: 16px;
+			.overviewDataContactItem {
+				color: #fff;
+				&:hover,
+				&:active {
+					transition: all 0.5s;
+					color: $primary-color;
+				}
+			}
+		}
+	}
+	.overviewFooter {
+		background: $background-color;
+		display: flex;
+		border-radius: 4px;
+		overflow: hidden;
+		position: relative;
+		&::before {
+			content: '';
+			position: absolute;
+			left: 0;
+			top: 0;
+			width: 100%;
+			height: 1px;
+			background: radial-gradient(
+				ellipse at left,
+				rgba(197, 202, 213, 0.15) 0%,
+				rgba(255, 255, 255, 0) 70%
+			);
+		}
+		.overviewFooterItem {
+			background: $background-color;
+			color: #fff;
+			flex: 1;
+			font-size: 14px;
+			height: 70px;
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			cursor: pointer;
+			gap: 12px;
+			&:not(:first-child)::before {
+				content: '';
+				position: absolute;
+				left: 50%;
+				top: 0;
+				width: 1px;
+				height: 100%;
+				background: radial-gradient(
+					ellipse at top,
+					rgba(197, 202, 213, 0.15) 0%,
+					rgba(255, 255, 255, 0) 70%
+				);
+			}
+			.overviewFooterName {
+				text-transform: uppercase;
+			}
+			&:hover {
+				transition: all 0.2s;
+				color: $primary-color;
+				gap: 16px;
+			}
+		}
+	}
+}
+
+@keyframes typing {
+	from {
+		width: 0;
+	}
+	to {
+		width: 100%;
 	}
 }

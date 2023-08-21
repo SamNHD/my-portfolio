@@ -4,7 +4,12 @@ import {
 	faRectangleList,
 	faUser,
 } from '@fortawesome/free-regular-svg-icons'
-import { faEye, faLaptopCode } from '@fortawesome/free-solid-svg-icons'
+import {
+	faCloudArrowDown,
+	faEye,
+	faLaptopCode,
+	faPaperPlane as faPaperPlaneSolid,
+} from '@fortawesome/free-solid-svg-icons'
 import { faFacebook, faInstagram } from '@fortawesome/free-brands-svg-icons'
 import avatar from '../img/jpeg/avatar.jpg'
 import back from '../img/jpeg/back.jpg'
@@ -45,7 +50,7 @@ export const NAV_LIST = [
 export const OVERVIEW_DATA = {
 	photo: avatar,
 	name: 'Duong Nguyen',
-	title: 'Front-end Developer',
+	title: ['Front-end Developer', 'Back-end Developer'],
 	contact: [
 		{
 			icon: faInstagram,
@@ -66,5 +71,18 @@ export const SLIDE_LIST = [
 	{
 		id: 1,
 		url: back,
+	},
+]
+
+export const OVERVIEW_FOOTER_DATA = [
+	{
+		id: 0,
+		icon: faCloudArrowDown,
+		name: 'Download CV',
+	},
+	{
+		id: 1,
+		icon: faPaperPlaneSolid,
+		name: 'Contact me',
 	},
 ]

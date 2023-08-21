@@ -3,7 +3,12 @@ import classNames from 'classnames'
 import style from './navbar.module.scss'
 import { NAV_LIST } from '@/public/constants'
 
-const Navbar = (props) => {
+interface NavbarProps {
+	id: number
+	onChange: (id: number) => void
+}
+
+const Navbar = (props: NavbarProps) => {
 	return (
 		<div className={style.navbar}>
 			{NAV_LIST.map((item) => (
