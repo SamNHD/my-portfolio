@@ -1,0 +1,39 @@
+@import '../../public/styles/styles.scss';
+
+.about {
+	.aboutItem {
+		.aboutItemContent {
+			padding: 30px;
+			.aboutName {
+				color: $text-color;
+				font-weight: 700;
+			}
+			.aboutIntro {
+				color: $text-color;
+			}
+			.aboutInfo {
+				margin-top: 16px;
+				display: grid;
+				grid-template-columns: 1fr 1fr;
+				.aboutInfoItem {
+					display: flex;
+					align-items: center;
+					.aboutInfoItemTitle {
+						color: rgba(255, 255, 255, 0.9);
+						text-transform: uppercase;
+						position: relative;
+						font-size: 14px;
+						&::after {
+							content: ' . . . .';
+							color: rgba(255, 255, 255, 0.9);
+							margin-right: 8px;
+						}
+					}
+					.aboutInfoItemContent {
+						color: $text-color;
+					}
+				}
+			}
+		}
+	}
+}
