@@ -1,4 +1,4 @@
-import React, { useEffect, useRef, useState } from 'react'
+import React, { useCallback, useEffect, useRef, useState } from 'react'
 import PropTypes from 'prop-types'
 import style from './overview.module.scss'
 import OverviewFooter from './overviewFooter'
@@ -23,37 +23,35 @@ export interface OverviewProps {
 }
 
 const Overview = (props: OverviewProps) => {
-	const isFirstRef = useRef(true)
 	const [id, setId] = useState(0)
 	const [currentText, setCurrentText] = useState('')
 
-	let character = 0
-	let timeOut: string | number | NodeJS.Timeout | undefined
-
-	const typeWriter = (text: string) => {
-		const length = text.length
-		timeOut = setTimeout(
-			() => {
-				character++
-				var type = text.substring(0, character)
-				setCurrentText(type)
-				typeWriter(text)
-
-				if (character === length) {
-					setId(id >= OVERVIEW_DATA.title.length - 1 ? 0 : id + 1)
-					character = 0
-					clearTimeout(timeOut)
-				}
-				if (isFirstRef.current) {
-					isFirstRef.current = false
-				}
-			},
-			isFirstRef.current ? 0 : character === 0 ? 5000 : 100,
-		)
-	}
+	const typeWriter = useCallback((text: string, dataId: number) => {
+		if (text.length < OVERVIEW_DATA.title[dataId]?.length) {
+			const type = OVERVIEW_DATA.title[dataId].substring(0, text.length + 1)
+			setCurrentText(type)
+		}
+	}, [])
 
 	useEffect(() => {
-		typeWriter(OVERVIEW_DATA.title[id])
+		if (currentText !== OVERVIEW_DATA.title[id]) {
+			const interval = setInterval(() => {
+				typeWriter(currentText, id)
+			}, 100)
+			return () => clearInterval(interval)
+		}
+	}, [typeWriter, currentText, id])
+
+	useEffect(() => {
+		const timeout = setTimeout(() => {
+			setCurrentText('')
+			if (id === OVERVIEW_DATA.title.length - 1) {
+				setId(0)
+			} else {
+				setId(id + 1)
+			}
+		}, 5000)
+		return () => clearTimeout(timeout)
 	}, [id])
 
 	const renderOverviewData = (data: Data) => {

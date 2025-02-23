@@ -12,12 +12,10 @@ const About = () => {
 				<div className={style.aboutItemContent}>
 					<div className={style.aboutName}>Hello! I’m Duong Nguyen.</div>
 					<div className={style.aboutIntro}>
-						I am a passionate and highly motivated Frontend Developer with over a year of
-						experience. I have worked on various frontend projects, utilizing HTML, CSS, JavaScript,
-						as well as frameworks like React. My primary focus is on creating the best possible user
-						interfaces, and I consistently strive to enhance my skills through continuous learning.
-						I am eager to join an exciting environment where I can contribute to the company&apos;s
-						growth and development.
+						I am a passionate and highly motivated Frontend Developer with +2.5 year of experience.
+						I have worked on various frontend projects. My primary focus is on creating the best
+						possible user interfaces, and I consistently strive to enhance my skills through
+						continuous learning.
 					</div>
 					<div className={style.aboutInfo}>
 						{CONTACT_DATA.map((item) => (

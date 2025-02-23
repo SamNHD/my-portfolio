@@ -6,6 +6,7 @@ import Overview from '../overview/overview'
 import About from '../about/about'
 import Resume from '../resume/resume'
 import classNames from 'classnames'
+import Exam from '../exam/exam'
 
 const CONTENT_LIST = [
 	{
@@ -18,7 +19,7 @@ const CONTENT_LIST = [
 	},
 	{
 		id: 2,
-		content: <Resume />,
+		content: <Exam />,
 	},
 	{
 		id: 3,

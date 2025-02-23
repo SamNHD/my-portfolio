@@ -12,7 +12,9 @@ import {
 } from '@fortawesome/free-solid-svg-icons'
 import { faFacebook, faInstagram } from '@fortawesome/free-brands-svg-icons'
 import avatar from '../img/jpeg/avatar.jpg'
+import bg_portfolio from '../img/jpeg/bg_portfolio.jpg'
 import back from '../img/jpeg/back.jpg'
+import dayjs from 'dayjs'
 
 export const NAV_LIST = [
 	{
@@ -54,11 +56,11 @@ export const OVERVIEW_DATA = {
 	contact: [
 		{
 			icon: faInstagram,
-			url: 'https://www.facebook.com/',
+			url: 'https://www.instagram.com/_duog_n/',
 		},
 		{
 			icon: faFacebook,
-			url: 'https://www.facebook.com/',
+			url: 'https://www.facebook.com/profile.php?id=100008391554261',
 		},
 	],
 }
@@ -66,7 +68,7 @@ export const OVERVIEW_DATA = {
 export const SLIDE_LIST = [
 	{
 		id: 0,
-		url: avatar,
+		url: bg_portfolio,
 	},
 	{
 		id: 1,
@@ -74,23 +76,10 @@ export const SLIDE_LIST = [
 	},
 ]
 
-export const OVERVIEW_FOOTER_DATA = [
-	{
-		id: 0,
-		icon: faCloudArrowDown,
-		name: 'Download CV',
-	},
-	{
-		id: 1,
-		icon: faPaperPlaneSolid,
-		name: 'Contact me',
-	},
-]
-
 export const CONTACT_DATA = [
 	{
 		title: 'Age',
-		value: '24',
+		value: dayjs().diff('1999-11-21', 'year'),
 	},
 	{
 		title: 'Telephone',
@@ -102,7 +91,7 @@ export const CONTACT_DATA = [
 	},
 	{
 		title: 'Address',
-		value: 'Ben Cat, Binh Duong',
+		value: 'Binh Duong',
 	},
 ]
 
